@@ -1,0 +1,28 @@
+- initialize npm while adding typescript
+    - npx create-next-app
+    - enter name of file 
+    - cd name-of-file 
+    - npm i -D typescript @types/react 
+    - touch tsconfig.json 
+    - npm run dev 
+- reorganize directories and files 
+    - create two directories
+        - client 
+            - store frontend files in here 
+        - server
+            - store backend files in here 
+- install dependencies
+    - client 
+        - bootstrap
+        - tailwindcss
+
+    - server 
+        - express
+        - jsonwebtoken
+        - cors
+        - dotenv 
+        - bcrypt
+        - mongodb
+        - mongoose 
+        - gh-pages 
+        - nodemon: install this as dev dep 
