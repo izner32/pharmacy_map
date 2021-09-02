@@ -15,7 +15,6 @@
     - client 
         - bootstrap
         - tailwindcss
-
     - server 
         - express
         - jsonwebtoken
@@ -26,3 +25,28 @@
         - mongoose 
         - gh-pages 
         - nodemon: install this as dev dep 
+- setup nodemon 
+- setup tailwind css
+    - npm install tailwindcss 
+    - src> styles 
+        - create index.css 
+            - paste @tailwind base; @tailwind components; @tailwind utilities;
+    - npx tailwindcss init 
+    - create postcss.config.js 
+        - module.exports = {
+            plugins: [
+                "tailwindcss"
+            ]
+        }
+    - fix module errors with nextjs 
+        - create a .babelrc file 
+            - {
+                "presets": ["next/babel"],
+                "plugins": []
+            }
+        - inside .eslintrc.json 
+            - {
+                "extends": ["next/babel"]
+            }
+    - to use tailwind css, import it in the components page 
+    import "../styles/index.css
