@@ -50,3 +50,11 @@
             }
     - to use tailwind css, import it in the components page 
     import "../styles/index.css
+    - enable jitmode 
+        - go to tailwind.config.js, then add this
+            mode: 'jit',
+            // These paths are just examples, customize them to match your project structure
+            purge: [
+                './public/**/*.html',
+                './src/**/*.{js,jsx,ts,tsx,vue}',
+            ],
