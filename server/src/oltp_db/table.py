@@ -21,6 +21,9 @@ def create_store_query():
     
     return stores_query 
 
+# insert queries for multiple store
+
+
 # create table 
 def create_store_table(conn,cur):
     for i in create_store_query():
@@ -31,6 +34,7 @@ def main():
     cur, conn = create_database()
 
     create_store_table(cur,conn)
+    # insert_store-table(cur,conn)
 
 main()
 
