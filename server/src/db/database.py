@@ -5,7 +5,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv()) 
 
 def create_database():
-    conn = psycopg2.connect(host="localhost", port="5432",database="postgres",user="postgres",password=os.getenv("DB_PASSWORD"))
+    conn = psycopg2.connect(host="localhost", port="5432",database="branchdb",user="postgres",password=os.getenv("DB_PASSWORD"))
     conn.set_session(autocommit = True) 
     cur = conn.cursor() 
 

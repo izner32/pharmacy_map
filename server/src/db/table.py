@@ -12,7 +12,9 @@ def create_store_query():
                 branch_id INTEGER PRIMARY KEY,
                 name VARCHAR(40),
                 address TEXT,
-                contact VARCHAR(20)
+                contact VARCHAR(20),
+                latitude DECIMAL(8,6),
+                longitude DECIMAL(9,6)
             )
         """.format(stores[i]))
 
@@ -20,9 +22,6 @@ def create_store_query():
         stores_query.append(stores_create)
     
     return stores_query 
-
-# insert queries for multiple store
-
 
 # create table 
 def create_store_table(conn,cur):
@@ -34,7 +33,6 @@ def main():
     cur, conn = create_database()
 
     create_store_table(cur,conn)
-    # insert_store-table(cur,conn)
 
 main()
 
