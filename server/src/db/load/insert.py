@@ -1,7 +1,7 @@
 import pandas as pd 
-from database import connect_database
+from db_conn import connect_database
 
-# load/insert data into tables query
+# queries for inserting
 def insert_store_query():
     filepath = "server/src/data/output_data/transformed_data/cleaned_drugstores_with_coordinates.csv"
     df_store_branch = pd.read_csv(filepath)
@@ -30,8 +30,7 @@ def insert_store_query():
     
     return store_queries
 
-insert_store_query()
-
+# insert values 
 def insert_store(conn,cur):
     for i,query in enumerate(insert_store_query()):
         try:

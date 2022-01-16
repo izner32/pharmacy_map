@@ -1,4 +1,4 @@
-from database import connect_database
+from db_conn import connect_database
 
 # create queries for multiple store
 def create_store_query():
