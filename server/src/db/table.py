@@ -1,4 +1,4 @@
-from database import create_database
+from database import connect_database
 
 # create queries for multiple store
 def create_store_query():
@@ -8,14 +8,14 @@ def create_store_query():
     stores_query = []
     while i < len(stores):
         stores_create = ("""
-            CREATE {} IF NOT EXISTS (
+            CREATE TABLE IF NOT EXISTS {}(
                 branch_id INTEGER PRIMARY KEY,
                 name VARCHAR(40),
                 address TEXT,
-                contact VARCHAR(20),
+                contact VARCHAR(200),
                 latitude DECIMAL(8,6),
                 longitude DECIMAL(9,6)
-            )
+            );
         """.format(stores[i]))
 
         i = i + 1 
@@ -24,15 +24,15 @@ def create_store_query():
     return stores_query 
 
 # create table 
-def create_store_table(conn,cur):
+def create_store(conn,cur):
     for i in create_store_query():
         cur.execute(i)
         conn.commit() 
 
 def main():
-    cur, conn = create_database()
-
-    create_store_table(cur,conn)
+    conn, cur = connect_database()
+    create_store(conn,cur)
+    conn.close()
 
 main()
 
